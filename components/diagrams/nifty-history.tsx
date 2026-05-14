@@ -1,5 +1,7 @@
 "use client";
 
+import { DiagramScroller } from "./diagram-scroller";
+
 // Illustrative Nifty 50 data points over 25 years
 const POINTS = [
   { year: 2000, value: 1500, label: "Dotcom bust starts" },
@@ -49,6 +51,7 @@ export function NiftyHistoryDiagram() {
         Nifty 50 — 25-year journey (illustrative)
       </div>
 
+      <DiagramScroller minWidth={640}>
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Nifty 50 historical chart">
         {/* gridlines */}
         {[0, 5000, 10000, 15000, 20000, 25000].map((y) => (
@@ -131,6 +134,7 @@ export function NiftyHistoryDiagram() {
           </g>
         ))}
       </svg>
+      </DiagramScroller>
 
       <p className="mt-2 text-center text-xs italic text-ink-3 font-sans not-italic">
         From ~1,500 to 26,000 — nearly 17x in 24 years (despite ~5 major drawdowns). Stay invested through the chaos.

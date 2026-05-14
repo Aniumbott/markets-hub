@@ -1,5 +1,7 @@
 "use client";
 
+import { DiagramScroller } from "./diagram-scroller";
+
 interface Node {
   id: string;
   label: string;
@@ -70,6 +72,7 @@ export function CascadeFlowDiagram() {
       <div className="mb-3 font-sans text-sm font-medium text-ink">
         Macro cascade — how one Fed hike ripples through to Nifty
       </div>
+      <DiagramScroller minWidth={600}>
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Macro cascade flow diagram">
         {/* Edges */}
         {EDGES.map((e, i) => {
@@ -127,8 +130,9 @@ export function CascadeFlowDiagram() {
           );
         })}
       </svg>
+      </DiagramScroller>
 
-      <div className="mt-3 flex items-center justify-center gap-4 text-xs font-sans text-ink-3 not-italic">
+      <div className="mt-3 flex flex-wrap items-center justify-center gap-3 text-xs font-sans text-ink-3 not-italic">
         <span className="inline-flex items-center gap-1.5">
           <span className="inline-block h-3 w-3 rounded border-2" style={{ borderColor: "#C2410C" }} />
           Policy

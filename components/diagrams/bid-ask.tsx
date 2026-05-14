@@ -1,7 +1,10 @@
 "use client";
 
+import { DiagramScroller } from "./diagram-scroller";
+
 export function BidAskDiagram() {
   return (
+    <DiagramScroller minWidth={520}>
     <svg viewBox="0 0 600 220" className="w-full max-w-xl mx-auto" role="img" aria-label="Bid-ask spread diagram">
       <defs>
         <linearGradient id="bidGrad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -57,5 +60,6 @@ export function BidAskDiagram() {
       <text x="125" y="208" textAnchor="middle" className="fill-[var(--ink-3)] font-sans" fontSize="10">best bid →</text>
       <text x="475" y="208" textAnchor="middle" className="fill-[var(--ink-3)] font-sans" fontSize="10">← best ask</text>
     </svg>
+    </DiagramScroller>
   );
 }

@@ -147,7 +147,7 @@ export function ConceptMap() {
 
   return (
     <div className="relative">
-      <div className="h-[600px] overflow-hidden rounded-2xl border border-border bg-bg lg:h-[720px]">
+      <div className="h-[420px] overflow-hidden rounded-2xl border border-border bg-bg sm:h-[520px] lg:h-[720px]">
         <ReactFlow
           nodes={nodes}
           edges={edges}

@@ -1,5 +1,7 @@
 "use client";
 
+import { DiagramScroller } from "./diagram-scroller";
+
 const ASSETS = [
   { name: "Cash / Liquid", risk: 1, return: 3, color: "#94A3B8" },
   { name: "FD", risk: 2, return: 7, color: "#64748B" },
@@ -32,6 +34,7 @@ export function RiskReturnScatterDiagram() {
       <div className="mb-3 font-sans text-sm font-medium text-ink">
         Risk vs return — Indian asset classes (long-run, illustrative)
       </div>
+      <DiagramScroller minWidth={560}>
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Risk vs return scatter plot">
         {/* gridlines */}
         {[0, 5, 10, 15, 20, 25, 30].map((y) => (
@@ -127,6 +130,7 @@ export function RiskReturnScatterDiagram() {
           </g>
         ))}
       </svg>
+      </DiagramScroller>
       <p className="mt-2 text-center text-xs italic text-ink-3 font-sans not-italic">
         Higher expected returns come with higher risk — but the trade-off isn't linear. The dashed curve roughly marks the efficient frontier.
       </p>

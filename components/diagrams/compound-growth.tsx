@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { DiagramScroller } from "./diagram-scroller";
 
 interface CompoundGrowthProps {
   initialPrincipal?: number;
@@ -106,6 +107,7 @@ export function CompoundGrowthDiagram({
         <Stat label="Final corpus" value={fmt(final.corpus)} tone="accent" />
       </div>
 
+      <DiagramScroller minWidth={560}>
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Compound growth chart">
         {[0, 0.25, 0.5, 0.75, 1].map((f) => (
           <g key={f}>
@@ -167,8 +169,9 @@ export function CompoundGrowthDiagram({
           strokeWidth="2.5"
         />
       </svg>
+      </DiagramScroller>
 
-      <div className="mt-3 flex items-center justify-center gap-4 text-xs">
+      <div className="mt-3 flex flex-wrap items-center justify-center gap-3 text-xs">
         <span className="inline-flex items-center gap-2 text-ink-2">
           <span className="inline-block h-0.5 w-6 bg-accent" /> Corpus value
         </span>

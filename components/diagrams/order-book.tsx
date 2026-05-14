@@ -1,5 +1,7 @@
 "use client";
 
+import { DiagramScroller } from "./diagram-scroller";
+
 export function OrderBookDiagram() {
   const bids = [
     { price: "2,800.00", qty: 12400 },
@@ -27,6 +29,7 @@ export function OrderBookDiagram() {
         <div className="font-mono text-xs text-ink-3">LTP: ₹2,800.00</div>
       </div>
 
+      <DiagramScroller minWidth={420}>
       <div className="grid grid-cols-2 gap-px overflow-hidden rounded-lg bg-border">
         {/* Bids */}
         <div className="bg-surface">
@@ -74,6 +77,7 @@ export function OrderBookDiagram() {
           ))}
         </div>
       </div>
+      </DiagramScroller>
 
       <p className="mt-3 text-xs text-ink-3">
         Top 5 levels of depth. The wider the bar, the more shares queued at that price.

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { DiagramScroller } from "./diagram-scroller";
 
 type Quadrant = "q1" | "q2" | "q3" | "q4";
 
@@ -111,6 +112,7 @@ export function FourQuadrantsDiagram() {
 
       <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
         {/* Grid */}
+        <DiagramScroller minWidth={460}>
         <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Four quadrants 2x2 grid">
           {/* axis labels */}
           <text x={W / 2} y={20} textAnchor="middle" className="fill-[var(--ink-2)] font-sans" fontSize="11" fontWeight="600">
@@ -134,6 +136,7 @@ export function FourQuadrantsDiagram() {
           {tile("q3", { x: margin, y: margin + halfH + 14 }, half, halfH)}
           {tile("q4", { x: margin + half + 4, y: margin + halfH + 14 }, half - 4, halfH)}
         </svg>
+        </DiagramScroller>
 
         {/* Active detail */}
         <div className="space-y-3">

@@ -7,7 +7,7 @@ const ConceptMap = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="h-[600px] animate-pulse rounded-2xl border border-border bg-surface lg:h-[720px]" />
+      <div className="h-[420px] animate-pulse rounded-2xl border border-border bg-surface sm:h-[520px] lg:h-[720px]" />
     ),
   }
 );

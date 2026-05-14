@@ -1,5 +1,7 @@
 "use client";
 
+import { DiagramScroller } from "./diagram-scroller";
+
 const SECTORS = [
   { name: "Auto", impact: 4.5, color: "#10B981" },
   { name: "NBFC", impact: 5.2, color: "#22C55E" },
@@ -29,6 +31,7 @@ export function RateCutImpactDiagram() {
       <div className="mb-3 font-sans text-sm font-medium text-ink">
         50 bps RBI rate cut — typical sector impact (rough 3-month return delta)
       </div>
+      <DiagramScroller minWidth={520}>
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Rate cut impact by sector">
         <line
           x1={center}
@@ -89,6 +92,7 @@ export function RateCutImpactDiagram() {
           ← lags · neutral · leads →
         </text>
       </svg>
+      </DiagramScroller>
       <p className="mt-2 text-center text-xs italic text-ink-3 font-sans not-italic">
         Rate cuts most help leveraged sectors (auto, NBFC, real estate, long bonds). Hurt FDs immediately. Banks mixed.
       </p>

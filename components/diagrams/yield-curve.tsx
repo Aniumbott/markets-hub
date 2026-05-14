@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { DiagramScroller } from "./diagram-scroller";
 
 type Shape = "normal" | "flat" | "inverted";
 
@@ -69,6 +70,7 @@ export function YieldCurveDiagram() {
         </div>
       </div>
 
+      <DiagramScroller minWidth={520}>
       <svg viewBox={`0 0 ${width} ${height}`} className="w-full" role="img" aria-label={`Yield curve - ${curve.label}`}>
         {/* gridlines */}
         {[4.0, 4.5, 5.0, 5.5].map((y) => (
@@ -142,6 +144,7 @@ export function YieldCurveDiagram() {
           </text>
         )}
       </svg>
+      </DiagramScroller>
 
       <figcaption className="mt-2 text-center text-xs italic text-ink-3 font-sans not-italic">
         {curve.label}: {curve.description}

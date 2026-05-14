@@ -71,7 +71,7 @@ export function Dashboard() {
             ? `Day ${totalStudyDays} of your journey`
             : "Welcome"}
         </span>
-        <h1 className="font-serif text-4xl leading-tight tracking-tight text-ink text-balance sm:text-5xl">
+        <h1 className="font-serif text-3xl leading-tight tracking-tight text-ink text-balance sm:text-4xl lg:text-5xl">
           {mounted && liveStreak > 0
             ? "Pick up where you left off"
             : "16 weeks. Indian and global markets. One hub."}
@@ -144,7 +144,7 @@ export function Dashboard() {
       {/* Stat cards */}
       <section
         aria-label="Progress at a glance"
-        className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+        className="mt-6 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4"
       >
         <StatCard
           icon={BookOpen}
@@ -194,7 +194,7 @@ export function Dashboard() {
           </Link>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
           {WEEKS.map((week) => {
             const lessonsCount = week.lessons.length;
             const doneCount = week.lessons.filter(

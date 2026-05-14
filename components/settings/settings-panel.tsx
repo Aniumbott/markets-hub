@@ -132,7 +132,7 @@ export function SettingsPanel() {
           </div>
         )}
 
-        <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+        <div className="mt-4 grid grid-cols-2 gap-2 sm:gap-3 sm:grid-cols-3">
           <StatRow label="Lessons completed" value={mounted ? Object.keys(completedLessons).length : 0} />
           <StatRow label="Flashcards in deck" value={mounted ? Object.keys(cards).length : 0} />
           <StatRow label="Habit-days logged" value={mounted ? Object.keys(habits).length : 0} />

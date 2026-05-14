@@ -1,5 +1,7 @@
 "use client";
 
+import { DiagramScroller } from "./diagram-scroller";
+
 const ASSETS = [
   { name: "Savings account", real: -2, color: "#DC2626" },
   { name: "FD (30% tax bracket)", real: -0.5, color: "#F97316" },
@@ -27,6 +29,7 @@ export function AssetClassReturnsDiagram() {
       <div className="mb-3 font-sans text-sm font-medium text-ink">
         Long-run real returns (after 5% inflation) — Indian asset classes
       </div>
+      <DiagramScroller minWidth={560}>
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Asset class real returns bar chart">
         {/* center axis */}
         <line
@@ -102,6 +105,7 @@ export function AssetClassReturnsDiagram() {
           );
         })}
       </svg>
+      </DiagramScroller>
       <p className="mt-2 text-center text-xs italic text-ink-3 font-sans not-italic">
         Savings accounts and high-tax-bracket FDs lose purchasing power over time. Equity is the long-run real-return engine.
       </p>
